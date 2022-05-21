@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Gymzilla.Models.Brand>
+@{
+    ViewData["Title"] = "our brand";
+}
+<h1> our brands</h1>
+<ul>
+    @foreach (Brand b in Model)
+    {
+        <li>
+            <a asp-controller="Brand" asp-action="ShopByBrand" asp-route-brand="@b.Name">  @b.Name</a>
+        </li>
+        }
+        @*
+        <li>
+            <a asp-controller="Brand" asp-action="ShopByBrand" asp-route-brand="brand 1"> brand 1 </a>
+        </li>
+        <li>
+            <a asp-controller="Brand" asp-action="ShopByBrand" asp-route-brand="brand 2"> brand 2 </a>
+        </li>
+
+        <li>    <a asp-controller="Brand" asp-action="ShopByBrand" asp-route-brand="brand 3"> brand 3 </a></li>
+
+        <li><a asp-controller="Brand" asp-action="ShopByBrand" asp-route-brand="brand 4"> brand 4 </a></li>
+        *@
+    </ul>
