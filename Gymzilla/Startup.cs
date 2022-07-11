@@ -27,6 +27,11 @@ namespace Gymzilla
 
 
             services.AddAuthentication()
+                .AddMicrosoftAccount(microsoftOptions =>
+                {
+                    microsoftOptions.ClientId = Configuration.GetSection("Authentication:Microsoft")["ClientId"];
+                    microsoftOptions.ClientSecret = Configuration.GetSection("Authentication:Microsoft")["ClientSecret"];
+                })
                 .AddGoogle(options =>
                 {
                     options.ClientId = Configuration.GetSection("Authentication:Google")["ClientId"];
